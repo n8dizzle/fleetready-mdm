@@ -39,22 +39,22 @@ function IPadHomeScreen({ className = '', size = 'lg' }) {
     lg: 'max-w-[320px]',
   }
   const apps = [
-    { name: 'Slack', color: '#4A154B', letter: 'S' },
-    { name: 'Trane', color: '#E31837', letter: 'T' },
-    { name: 'Camera', color: '#6B7280', letter: '📷' },
-    { name: 'Calculator', color: '#F97316', letter: '+' },
-    { name: 'Bluon', color: '#1E40AF', letter: 'B' },
-    { name: 'LennoxPros', color: '#111827', letter: 'L' },
-    { name: 'CE HVAC', color: '#1F2937', letter: 'CE' },
-    { name: 'Milwaukee', color: '#DC2626', letter: 'M' },
-    { name: 'CoolCloud', color: '#2563EB', letter: 'C' },
-    { name: 'Ruud', color: '#374151', letter: 'R' },
+    { name: 'Slack', color: '#4A154B' },
+    { name: 'Trane', color: '#E31837' },
+    { name: 'Camera', color: '#6B7280' },
+    { name: 'Calculator', color: '#F97316' },
+    { name: 'Bluon', color: '#1E40AF' },
+    { name: 'LennoxPros', color: '#111827' },
+    { name: 'CE HVAC', color: '#1F2937' },
+    { name: 'Milwaukee', color: '#DC2626' },
+    { name: 'CoolCloud', color: '#2563EB' },
+    { name: 'Ruud', color: '#374151' },
   ]
   const dock = [
-    { name: 'ServiceTitan', color: '#1F2937', letter: '⚙' },
-    { name: 'Maps', color: '#34D399', letter: '📍' },
-    { name: 'Chrome', color: '#FBBF24', letter: '🌐' },
-    { name: 'ChatGPT', color: '#111827', letter: 'AI' },
+    { name: 'ServiceTitan', color: '#1F2937' },
+    { name: 'Maps', color: '#34D399' },
+    { name: 'Chrome', color: '#FBBF24' },
+    { name: 'ChatGPT', color: '#111827' },
   ]
   return (
     <div className={`${sizes[size]} w-full mx-auto ${className}`}>
@@ -68,9 +68,7 @@ function IPadHomeScreen({ className = '', size = 'lg' }) {
             <div className="grid grid-cols-5 gap-[6%] mt-[5%]">
               {apps.map((app, i) => (
                 <div key={i} className="flex flex-col items-center gap-[3px]">
-                  <div className="w-full aspect-square rounded-[22%] flex items-center justify-center text-white font-bold" style={{ backgroundColor: app.color, fontSize: 'clamp(6px, 2.5vw, 11px)' }}>
-                    {app.letter}
-                  </div>
+                  <div className="w-full aspect-square rounded-[22%]" style={{ backgroundColor: app.color }} />
                   <span className="text-white/70 truncate w-full text-center" style={{ fontSize: 'clamp(4px, 1.5vw, 7px)' }}>{app.name}</span>
                 </div>
               ))}
@@ -82,9 +80,7 @@ function IPadHomeScreen({ className = '', size = 'lg' }) {
               <div className="grid grid-cols-4 gap-[8%]">
                 {dock.map((app, i) => (
                   <div key={i} className="flex flex-col items-center gap-[2px]">
-                    <div className="w-full aspect-square rounded-[22%] flex items-center justify-center text-white font-bold" style={{ backgroundColor: app.color, fontSize: 'clamp(6px, 2.5vw, 11px)' }}>
-                      {app.letter}
-                    </div>
+                    <div className="w-full aspect-square rounded-[22%]" style={{ backgroundColor: app.color }} />
                     <span className="text-white/70 truncate w-full text-center" style={{ fontSize: 'clamp(3px, 1.2vw, 6px)' }}>{app.name}</span>
                   </div>
                 ))}
