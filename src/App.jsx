@@ -233,6 +233,9 @@ function Hero() {
               <span className="flex items-center gap-1.5">
                 <IconCheck /> Local to DFW
               </span>
+              <span className="flex items-center gap-1.5">
+                <IconCheck /> Apple Certified Specialist
+              </span>
             </div>
           </div>
           <div className="relative flex justify-center">
