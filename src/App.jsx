@@ -236,11 +236,7 @@ function Hero() {
             </div>
           </div>
           <div className="relative flex justify-center">
-            <img
-              src="/ipad-homescreen.png"
-              alt="iPad showing managed home screen with business apps like ChatGPT, Lennox Pros, Bluon, Slack, and Chrome, all configured and controlled by FleetReady MDM"
-              className="w-full max-w-[420px]"
-            />
+            <IPadHomeScreen size="lg" />
             <div className="absolute -top-4 -right-4 w-24 h-24 bg-orange/20 rounded-full blur-3xl" />
             <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-orange/10 rounded-full blur-3xl" />
           </div>
