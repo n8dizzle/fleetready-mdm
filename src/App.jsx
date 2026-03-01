@@ -236,11 +236,13 @@ function Hero() {
             </div>
           </div>
           <div className="relative flex justify-center">
-            <img
-              src="/ipad-homescreen.svg"
-              alt="iPad showing managed home screen with business apps like ChatGPT, Lennox Pros, Bluon, Slack, and Chrome, all configured and controlled by FleetReady MDM"
-              className="w-full max-w-[400px] drop-shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
-            />
+            <div className="relative max-w-[420px] w-full" style={{mask: 'radial-gradient(ellipse 85% 85% at center, black 60%, transparent 100%)', WebkitMask: 'radial-gradient(ellipse 85% 85% at center, black 60%, transparent 100%)'}}>
+              <img
+                src="/ipad-homescreen.png"
+                alt="iPad showing managed home screen with business apps like ChatGPT, Lennox Pros, Bluon, Slack, and Chrome, all configured and controlled by FleetReady MDM"
+                className="w-full drop-shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
+              />
+            </div>
             <div className="absolute -top-4 -right-4 w-24 h-24 bg-orange/20 rounded-full blur-3xl" />
             <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-orange/10 rounded-full blur-3xl" />
           </div>
