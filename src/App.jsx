@@ -21,6 +21,7 @@ function IPadMockup({ className = '', size = 'lg' }) {
             src="/lockscreen.png"
             alt="Custom iPad lock screen showing company logo, motivational message, QR code linking to Google reviews, and Review Us call-to-action"
             className="w-full h-auto block"
+            loading="lazy"
           />
         </div>
         {/* Bottom edge detail */}
@@ -236,7 +237,7 @@ function Hero() {
           </div>
           <div className="relative flex justify-center">
             <img
-              src="/ipad-homescreen.png"
+              src="/ipad-homescreen.svg"
               alt="iPad showing managed home screen with business apps like ChatGPT, Lennox Pros, Bluon, Slack, and Chrome, all configured and controlled by FleetReady MDM"
               className="w-full max-w-[400px] drop-shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
             />
@@ -297,8 +298,8 @@ function PainPoints() {
     <section className="py-16 md:py-24 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-black text-navy mb-4">Sound Familiar?</h2>
-          <p className="text-gray-500 text-lg max-w-2xl mx-auto">These are the problems every small business hits when they hand out devices without a plan.</p>
+          <h2 className="text-3xl sm:text-4xl font-black text-navy mb-4">Common iPad & Device Management Challenges</h2>
+          <p className="text-gray-500 text-lg max-w-2xl mx-auto">These are the problems every DFW small business hits when they hand out devices without a plan.</p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {cards.map((c, i) => (
@@ -330,8 +331,8 @@ function HowItWorks() {
       <div className="absolute inset-0 opacity-5" style={{backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px'}} />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">How It Works</h2>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto">From setup to full control in five steps.</p>
+          <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">How MDM Setup Works</h2>
+          <p className="text-white/60 text-lg max-w-2xl mx-auto">From setup to full device control in five steps.</p>
         </div>
         {/* Desktop: horizontal stepper */}
         <div className="hidden lg:block">
@@ -396,7 +397,7 @@ function RemoteCapabilities() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12">
           <span className="inline-block bg-navy/10 text-navy text-sm font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-4">Full Remote Control</span>
-          <h2 className="text-3xl sm:text-4xl font-black text-navy mb-4">Everything You Can Do, From Anywhere</h2>
+          <h2 className="text-3xl sm:text-4xl font-black text-navy mb-4">Remote Device Management Capabilities</h2>
           <p className="text-gray-500 text-lg max-w-2xl mx-auto">
             Every device you enroll gets the full suite of remote management tools. Here's what's at your fingertips. No device pickup required.
           </p>
@@ -601,7 +602,7 @@ function Pricing() {
     <section id="pricing" className="py-16 md:py-24 bg-gray-light">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-black text-navy mb-4">Simple, Transparent Pricing</h2>
+          <h2 className="text-3xl sm:text-4xl font-black text-navy mb-4">Simple, Transparent MDM Pricing</h2>
           <p className="text-gray-500 text-lg max-w-2xl mx-auto">No surprises. No contracts. Just flat rates so you know exactly what you're paying.</p>
         </div>
         <div className="grid md:grid-cols-3 gap-8 items-stretch">
@@ -781,8 +782,8 @@ function FAQ() {
     <section id="faq" className="py-16 md:py-24 bg-white">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-black text-navy mb-4">Frequently Asked Questions</h2>
-          <p className="text-gray-500 text-lg">Got questions? We've got answers.</p>
+          <h2 className="text-3xl sm:text-4xl font-black text-navy mb-4">MDM & Device Management FAQ</h2>
+          <p className="text-gray-500 text-lg">Got questions about mobile device management? We've got answers.</p>
         </div>
         <div className="space-y-3">
           {faqs.map((f, i) => (
@@ -817,7 +818,7 @@ function WhyLocal() {
           <span className="sr-only">Location</span>
         </div>
         <h2 className="text-3xl sm:text-4xl font-black text-white mb-6">
-          We're Your Neighbors, Not a Help Desk in Another State
+          Local IT Device Management in DFW — Not a Help Desk in Another State
         </h2>
         <p className="text-white/70 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
           FleetReady is based in Flower Mound. We pick up your devices, deploy them, and we're real people you can text. No tickets. No hold music. No offshore support.
