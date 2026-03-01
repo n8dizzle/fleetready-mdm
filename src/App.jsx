@@ -231,7 +231,7 @@ function Hero() {
                 <IconCheck /> No contracts
               </span>
               <span className="flex items-center gap-1.5">
-                <IconCheck /> Same-day deployment
+                <IconCheck /> Local to DFW
               </span>
             </div>
           </div>
