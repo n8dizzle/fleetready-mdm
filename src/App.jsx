@@ -63,7 +63,7 @@ function IPadHomeScreen({ className = '', size = 'lg' }) {
         <div className="relative bg-black rounded-[1.4rem] overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-white/[0.08] via-transparent to-transparent z-10 pointer-events-none rounded-[1.4rem]" />
           {/* Home screen content */}
-          <div className="aspect-[3/4] p-[8%] flex flex-col justify-between">
+          <div className="aspect-[3/4] p-[8%] flex flex-col justify-between bg-[#1B2A4A]">
             {/* App grid */}
             <div className="grid grid-cols-5 gap-[6%] mt-[5%]">
               {apps.map((app, i) => (
