@@ -1088,11 +1088,11 @@ export default function App() {
       <Navbar />
       <Hero />
       <LockScreenFeature />
+      <CaseStudy />
       <PhysicalSetup />
       <PainPoints />
       <HowItWorksAndPricing />
       <RemoteCapabilities />
-      <CaseStudy />
       <ContactForm />
       <WhyLocal />
       <FAQ />
