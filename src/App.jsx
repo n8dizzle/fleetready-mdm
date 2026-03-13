@@ -475,8 +475,8 @@ function HowItWorksAndPricing() {
                   <div className="flex flex-wrap items-center gap-x-2 gap-y-1 mb-1.5">
                     <h3 className="text-white font-bold text-base leading-snug">{s.title}</h3>
                     <span className="inline-flex items-baseline gap-1.5">
-                      <span className={`text-xs font-black px-2.5 py-0.5 rounded-full ${s.badge ? 'bg-orange/15 text-orange' : 'bg-white/10 text-orange'}`}>{s.price}</span>
-                      {s.priceLabel && <span className="text-white/35 text-xs">{s.priceLabel}</span>}
+                      <span className={`text-sm font-black px-3 py-1 rounded-full border ${s.badge ? 'bg-orange text-white border-orange' : 'bg-white/10 text-white border-white/20'}`}>{s.price}</span>
+                      {s.priceLabel && <span className="text-white/50 text-xs">{s.priceLabel}</span>}
                     </span>
                   </div>
                   <p className="text-white/50 text-sm leading-relaxed">{s.desc}</p>
