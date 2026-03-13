@@ -359,137 +359,63 @@ function PainPoints() {
 }
 
 // ─── How It Works ───────────────────────────────────────────────────────────
-function StepFeatures({ items }) {
-  const [open, setOpen] = useState(false)
-  return (
-    <div className="mt-3">
-      <button
-        onClick={() => setOpen(o => !o)}
-        className="text-sm text-orange font-semibold flex items-center gap-1 hover:text-orange-light transition-colors"
-      >
-        {open ? 'Hide details' : "What's included"}
-        <svg className={`w-4 h-4 transition-transform ${open ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
-      </button>
-      {open && (
-        <ul className="mt-3 space-y-2 bg-white/5 border border-white/10 rounded-xl p-4">
-          {items.map((item, i) => (
-            <li key={i} className="flex gap-2 text-sm text-white/70 items-start">
-              <IconCheck />
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
-  )
-}
-
-function HowItWorksAndPricing() {
+function HowItWorks() {
   const steps = [
-    {
-      num: '1',
-      title: 'Apple Business Manager Verification',
-      price: 'Included',
-      priceLabel: '1–5 business days',
-      badge: null,
-      desc: 'Requires a DUNS number and Apple verification. We can handle the application for you, or you can complete it yourself and come to us once approved. Must be completed before any devices are enrolled.',
-      items: null,
-    },
-    {
-      num: '2',
-      title: 'We Build Your System',
-      price: '$750',
-      priceLabel: 'one-time',
-      badge: 'One-Time',
-      desc: 'MDM platform configured, app library set up, device policies created. Optional: custom lock screen configured if you provide your branding.',
-      items: [
-        'Apple Business Manager setup',
-        'MDM platform configuration (SimpleMDM)',
-        'Device policies and restrictions configured',
-        'App library configured',
-        'Optional: custom lock screen (you provide the branding)',
-        'All pickup/dropoff trips free within 20 mi of Flower Mound',
-      ],
-    },
-    {
-      num: '3',
-      title: 'We Pick Up Your Devices',
-      price: 'Free within 20 mi',
-      priceLabel: null,
-      badge: null,
-      desc: "We come to you — every time. All pickup and dropoff trips for device setup are free within 20 miles of Flower Mound. Outside that? We'll quote a travel fee, but we'll still come.",
-      items: null,
-    },
-    {
-      num: '4',
-      title: 'Every Device Enrolled & Ready',
-      price: '$45',
-      priceLabel: 'per device',
-      badge: 'Per Device',
-      desc: 'Each device wiped, enrolled via ADE, apps pushed silently, serial-number labeled, and tested.',
-      items: [
-        'Device wiped or unboxed',
-        'Auto-enrolled via ADE — no Apple ID needed for end users',
-        'Apps pushed silently',
-        'Custom lock screen applied (if opted in)',
-        'Serial number labeled & verified in MDM',
-        'Asset labels, cases & screen protectors installed (if requested)',
-      ],
-    },
-    {
-      num: '5',
-      title: 'We Handle Everything',
-      price: '$12',
-      priceLabel: 'per device/mo — MDM subscription included',
-      badge: 'Monthly',
-      desc: "Need to lock a device, push an app, wipe a phone, or onboard a new hire? Just text or call us — we take care of it. You never have to log into a dashboard.",
-      items: [
-        'MDM platform subscription included — no separate platform fee',
-        'Just text or call — we action it for you',
-        'Remote lock, wipe & passcode reset',
-        'App pushes & updates on demand',
-        'Location tracking',
-        'New employee onboarding support',
-        'Email/text support — real person, no tickets',
-      ],
-    },
+    { num: '1', title: 'Apple Business Manager Verification', desc: 'Requires a DUNS number and Apple verification (1-5 business days). We can handle this for you, or you can complete it yourself and come to us once approved. Must be completed before any devices are enrolled.', price: 'Included' },
+    { num: '2', title: 'We Build Your System', desc: 'MDM platform configured, app library set up, device policies created. Optional: custom lock screen configured if you provide your branding. One-time setup.', price: '$750' },
+    { num: '3', title: 'We Pick Up Your Devices', desc: 'We come to you — every time. All pickup and dropoff trips for device setup are free within 20 miles of Flower Mound. Outside that? We\'ll quote a travel fee, but we\'ll still come.', price: 'Free within 20 mi' },
+    { num: '4', title: 'Every Device Enrolled & Ready', desc: 'Apps installed, locked down, serial-number labeled, and tested. Optional: physical asset labels, cases, and screen protectors installed while we have them.', price: '$45/device' },
+    { num: '5', title: 'We Handle Everything', desc: 'Need to lock a device, push an app, wipe a phone, or onboard a new hire? Just text or call us — we take care of it. You never have to log into a dashboard.', price: '$12/device/mo' },
   ]
   return (
-    <section id="pricing" className="py-16 md:py-24 bg-navy relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-navy relative overflow-hidden">
       <div className="absolute inset-0 opacity-5" style={{backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px'}} />
-      <div className="max-w-2xl mx-auto px-4 sm:px-6 relative">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">How It Works — and What It Costs</h2>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto">Five steps from setup to full device control, with transparent pricing at every stage.</p>
+          <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">How MDM Setup Works</h2>
+          <p className="text-white/60 text-lg max-w-2xl mx-auto">From setup to full device control in five steps.</p>
         </div>
-        {/* Vertical timeline */}
-        <div className="relative">
-          <div className="absolute left-5 top-5 bottom-5 w-px bg-white/15" />
-          <div className="space-y-8">
+        {/* Desktop: horizontal stepper */}
+        <div className="hidden lg:block">
+          {/* Number row with connecting lines */}
+          <div className="grid grid-cols-5 gap-6 px-8 mb-8">
             {steps.map((s, i) => (
-              <div key={i} className="flex gap-5 relative">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 bg-white/10 ring-2 ring-white/10 relative z-10">
-                  <span className="text-sm font-black text-orange">{s.num}</span>
-                </div>
-                <div className="flex-1 pb-2">
-                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1 mb-1.5">
-                    <h3 className="text-white font-bold text-base leading-snug">{s.title}</h3>
-                    <span className="inline-flex items-baseline gap-1.5">
-                      <span className={`text-xs font-black px-2.5 py-0.5 rounded-full ${s.badge ? 'bg-orange/15 text-orange' : 'bg-white/10 text-orange'}`}>{s.price}</span>
-                      {s.priceLabel && <span className="text-white/35 text-xs">{s.priceLabel}</span>}
-                    </span>
-                  </div>
-                  <p className="text-white/50 text-sm leading-relaxed">{s.desc}</p>
-                  {s.items && <StepFeatures items={s.items} />}
+              <div key={i} className="flex justify-center relative">
+                {i > 0 && <div className="absolute top-7 left-0 right-1/2 h-px bg-white/15 -translate-x-3" />}
+                {i < 4 && <div className="absolute top-7 left-1/2 right-0 h-px bg-white/15 translate-x-3" />}
+                <div className="w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0 bg-white/10 ring-2 ring-white/10 relative z-10">
+                  <span className="text-lg font-black text-orange">{s.num}</span>
                 </div>
               </div>
             ))}
           </div>
+          {/* Content row */}
+          <div className="grid grid-cols-5 gap-6 px-8">
+            {steps.map((s, i) => (
+              <div key={i} className="text-center">
+                <h3 className="text-white font-bold text-sm mb-2 leading-snug">{s.title}</h3>
+                <p className="text-white/50 text-xs leading-relaxed mb-3">{s.desc}</p>
+                <span className={`inline-block text-xs font-bold px-3 py-1 rounded-full ${s.note ? 'bg-amber-500/10 text-amber-400' : 'bg-white/10 text-orange'}`}>{s.price}</span>
+              </div>
+            ))}
+          </div>
         </div>
-        <p className="text-white/30 text-xs mt-10 text-center">* Apple Business Manager verification timeline is controlled by Apple and varies by business. We handle the application process for you, or you can complete it yourself before coming to us.</p>
-      </div>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative mt-16">
-        <PricingCalculator />
+        {/* Mobile/tablet: stacked cards */}
+        <div className="lg:hidden grid sm:grid-cols-2 gap-4">
+          {steps.map((s, i) => (
+            <div key={i} className={`rounded-xl p-5 ${s.note ? 'bg-amber-500/10 border border-amber-500/20' : 'bg-white/5 border border-white/10'}`}>
+              <div className="flex items-center gap-3 mb-3">
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${s.note ? 'bg-amber-500/20' : 'bg-white/10'}`}>
+                  <span className={`text-sm font-black ${s.note ? 'text-amber-400' : 'text-orange'}`}>{s.num}</span>
+                </div>
+                <h3 className="text-white font-bold text-sm leading-snug">{s.title}</h3>
+              </div>
+              <p className="text-white/50 text-xs leading-relaxed mb-3">{s.desc}</p>
+              <span className={`inline-block text-xs font-bold px-3 py-1 rounded-full ${s.note ? 'bg-amber-500/10 text-amber-400' : 'bg-white/10 text-orange'}`}>{s.price}</span>
+            </div>
+          ))}
+        </div>
+        <p className="text-center text-white/30 text-xs mt-10">* Apple Business Manager verification timeline is controlled by Apple and varies by business. We handle the application process for you, or you can complete it yourself before coming to us.</p>
       </div>
     </section>
   )
@@ -663,6 +589,120 @@ function CaseStudy() {
             </div>
           </div>
         </div>
+      </div>
+    </section>
+  )
+}
+
+// ─── Pricing ────────────────────────────────────────────────────────────────
+function Pricing() {
+  const components = [
+    {
+      step: '1',
+      badge: 'One-Time',
+      title: 'System Setup',
+      price: '$750',
+      period: '',
+      desc: 'Everything needed to build your MDM system from scratch before a single device is touched.',
+      items: [
+        'Apple Business Manager setup',
+        'MDM platform configuration (SimpleMDM)',
+        'Optional: custom lock screen configured (you provide the branding)',
+        'Device policies and restrictions configured',
+        'All pickup/dropoff trips free within 20 mi of Flower Mound',
+        'App library configured',
+      ],
+    },
+    {
+      step: '2',
+      badge: 'Per Device',
+      title: 'Device Enrollment',
+      price: '$45',
+      period: '/device',
+      desc: 'Charged once per device. Every device gets wiped, enrolled, configured, and verified.',
+      items: [
+        'Device wiped or unboxed',
+        'Auto-enrolled via ADE',
+        'Apps pushed silently',
+        'Custom lock screen applied (if opted in)',
+        'Serial number labeled & verified in MDM',
+        'Asset labels, barcodes, or name tags applied (if requested)',
+        'Cases & screen protectors installed (if you provide them)',
+        'No Apple ID needed for end users',
+      ],
+    },
+    {
+      step: '3',
+      badge: 'Monthly',
+      title: 'Ongoing Management',
+      price: '$12',
+      period: '/device/mo',
+      desc: 'You never touch the MDM dashboard. Just text or call us — we do it for you. Lock a device, wipe it, push an app, onboard a new hire — whatever you need, we handle it.',
+      items: [
+        'MDM platform subscription included',
+        'Just text or call — we action it for you',
+        'Remote lock, wipe & passcode reset',
+        'App pushes & updates on demand',
+        'Location tracking',
+        'New employee onboarding support',
+        'Email/text support — real person, no tickets',
+      ],
+    },
+  ]
+  return (
+    <section id="pricing" className="py-16 md:py-24 bg-gray-light">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-4">
+          <h2 className="text-3xl sm:text-4xl font-black text-navy mb-4">Simple, Transparent MDM Pricing</h2>
+          <p className="text-gray-500 text-lg max-w-2xl mx-auto">Your total cost is made up of three parts — here's exactly what each one covers.</p>
+        </div>
+        <p className="text-center text-sm font-semibold text-orange uppercase tracking-wider mb-10">Every customer pays all three</p>
+        <div className="grid md:grid-cols-3 gap-6 items-stretch">
+          {components.map((c, i) => (
+            <div key={i} className="bg-white rounded-2xl border-2 border-gray-medium p-8 flex flex-col">
+              <div className="flex items-center justify-between mb-5">
+                <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-orange-light text-orange">{c.badge}</span>
+                <span className="text-xs font-bold text-gray-400">Part {c.step} of 3</span>
+              </div>
+              <h3 className="text-xl font-bold text-navy mb-1">{c.title}</h3>
+              <div className="mb-3">
+                <span className="text-4xl font-black text-navy">{c.price}</span>
+                <span className="text-sm text-gray-400">{c.period}</span>
+              </div>
+              <p className="text-sm text-gray-500 mb-5 leading-relaxed">{c.desc}</p>
+              <ul className="space-y-3 flex-1">
+                {c.items.map((item, j) => (
+                  <li key={j} className="flex gap-3 text-sm text-gray-600">
+                    <IconCheck />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        <div className="mt-10 max-w-3xl mx-auto space-y-3">
+          <div className="bg-orange/5 rounded-xl p-5 border border-orange/20">
+            <h4 className="font-bold text-navy text-sm mb-2">MDM Platform Subscription Included in Management</h4>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              The $12/device/month covers everything — including the SimpleMDM platform subscription. No separate fees from the MDM provider. One number, all in.
+            </p>
+            <p className="text-gray-500 text-sm leading-relaxed mt-2">
+              <strong className="text-navy">Not on our management plan?</strong> You'd pay SimpleMDM directly — typically <strong>$2–$4/device/month</strong> — to keep your devices enrolled and managed.
+            </p>
+          </div>
+          <div className="bg-green-50 rounded-xl p-4 border border-green-200 text-center">
+            <p className="text-green-800 text-sm font-semibold mb-1">Free pickup & dropoff — every trip, every time</p>
+            <p className="text-green-700 text-sm">All device setup trips are included at no extra charge within 20 miles of Flower Mound. Need us farther out? We'll still come — just ask for a travel quote.</p>
+          </div>
+        </div>
+        <div className="mt-10 text-center">
+          <a href="#contact" className="inline-block bg-orange hover:bg-orange-hover text-white px-10 py-4 rounded-xl font-bold text-lg transition-all shadow-lg">
+            Get a Free Device Assessment
+          </a>
+        </div>
+        {/* Pricing Calculator */}
+        <PricingCalculator />
       </div>
     </section>
   )
@@ -1088,11 +1128,12 @@ export default function App() {
       <Navbar />
       <Hero />
       <LockScreenFeature />
-      <CaseStudy />
       <PhysicalSetup />
       <PainPoints />
-      <HowItWorksAndPricing />
+      <HowItWorks />
       <RemoteCapabilities />
+      <CaseStudy />
+      <Pricing />
       <ContactForm />
       <WhyLocal />
       <FAQ />
