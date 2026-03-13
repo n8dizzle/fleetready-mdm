@@ -555,12 +555,14 @@ function CaseStudy() {
 
 // ─── Pricing ────────────────────────────────────────────────────────────────
 function Pricing() {
-  const plans = [
+  const components = [
     {
-      title: 'System Setup',
+      step: '1',
       badge: 'One-Time',
+      title: 'System Setup',
       price: '$750',
       period: '',
+      desc: 'Everything needed to build your MDM system from scratch before a single device is touched.',
       items: [
         'Apple Business Manager setup',
         'MDM platform configuration (SimpleMDM)',
@@ -571,11 +573,12 @@ function Pricing() {
       ],
     },
     {
-      title: 'Per Device Enrollment',
+      step: '2',
       badge: 'Per Device',
+      title: 'Device Enrollment',
       price: '$45',
       period: '/device',
-      featured: true,
+      desc: 'Charged once per device. Every device gets wiped, enrolled, configured, and verified.',
       items: [
         'Device wiped or unboxed',
         'Auto-enrolled via ADE',
@@ -586,10 +589,12 @@ function Pricing() {
       ],
     },
     {
-      title: 'Full-Service Management',
-      badge: 'Ongoing',
+      step: '3',
+      badge: 'Monthly',
+      title: 'Ongoing Management',
       price: '$12',
       period: '/device/mo',
+      desc: 'We handle everything on the technical side every month so you never have to think about it.',
       items: [
         'Remote lock, wipe & passcode reset',
         'App pushes & updates',
@@ -602,46 +607,50 @@ function Pricing() {
   return (
     <section id="pricing" className="py-16 md:py-24 bg-gray-light">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-12">
+        <div className="text-center mb-4">
           <h2 className="text-3xl sm:text-4xl font-black text-navy mb-4">Simple, Transparent MDM Pricing</h2>
-          <p className="text-gray-500 text-lg max-w-2xl mx-auto">No surprises. No contracts. Just flat rates so you know exactly what you're paying.</p>
+          <p className="text-gray-500 text-lg max-w-2xl mx-auto">Your total cost is made up of three parts — here's exactly what each one covers.</p>
         </div>
-        <div className="grid md:grid-cols-3 gap-8 items-stretch">
-          {plans.map((p, i) => (
-            <div key={i} className={`rounded-2xl p-8 border-2 transition-all flex flex-col ${p.featured ? 'bg-navy text-white border-orange shadow-2xl scale-105 relative' : 'bg-white text-navy border-gray-medium hover:border-orange/40'}`}>
-              {p.featured && <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-orange text-white text-xs font-bold uppercase tracking-wider px-4 py-1 rounded-full">Most Popular</div>}
-              <div className="mb-6">
-                <span className={`text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full ${p.featured ? 'bg-white/10 text-orange' : 'bg-orange-light text-orange'}`}>{p.badge}</span>
+        <p className="text-center text-sm font-semibold text-orange uppercase tracking-wider mb-10">Every customer pays all three</p>
+        <div className="grid md:grid-cols-3 gap-6 items-stretch">
+          {components.map((c, i) => (
+            <div key={i} className="bg-white rounded-2xl border-2 border-gray-medium p-8 flex flex-col">
+              <div className="flex items-center justify-between mb-5">
+                <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-orange-light text-orange">{c.badge}</span>
+                <span className="text-xs font-bold text-gray-400">Part {c.step} of 3</span>
               </div>
-              <h3 className={`text-xl font-bold mb-2 ${p.featured ? 'text-white' : 'text-navy'}`}>{p.title}</h3>
-              <div className="mb-6">
-                <span className={`text-5xl font-black ${p.featured ? 'text-orange' : 'text-navy'}`}>{p.price}</span>
-                <span className={`text-sm ${p.featured ? 'text-white/60' : 'text-gray-400'}`}>{p.period}</span>
+              <h3 className="text-xl font-bold text-navy mb-1">{c.title}</h3>
+              <div className="mb-3">
+                <span className="text-4xl font-black text-navy">{c.price}</span>
+                <span className="text-sm text-gray-400">{c.period}</span>
               </div>
+              <p className="text-sm text-gray-500 mb-5 leading-relaxed">{c.desc}</p>
               <ul className="space-y-3 flex-1">
-                {p.items.map((item, j) => (
-                  <li key={j} className={`flex gap-3 text-sm ${p.featured ? 'text-white/80' : 'text-gray-600'}`}>
+                {c.items.map((item, j) => (
+                  <li key={j} className="flex gap-3 text-sm text-gray-600">
                     <IconCheck />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
-              <a href="#contact" className={`block text-center py-3 rounded-xl font-bold transition-all mt-8 ${p.featured ? 'bg-orange hover:bg-orange-hover text-white' : 'bg-navy hover:bg-navy-light text-white'}`}>
-                Get Started
-              </a>
             </div>
           ))}
         </div>
         <div className="mt-10 max-w-3xl mx-auto space-y-3">
           <div className="bg-navy/5 rounded-xl p-5 border border-navy/10">
-            <h4 className="font-bold text-navy text-sm mb-2">Important: MDM Platform Subscription</h4>
+            <h4 className="font-bold text-navy text-sm mb-2">Plus: MDM Platform Subscription (billed by provider)</h4>
             <p className="text-gray-600 text-sm leading-relaxed">
-              Every enrolled device requires an active MDM platform subscription (SimpleMDM). This is a separate cost billed directly by the MDM provider, typically <strong>$2-$4/device/month</strong> depending on the plan you choose. This applies to all customers, whether you self-manage or use our full-service management.
+              Every enrolled device also requires an MDM platform subscription through SimpleMDM, typically <strong>$2–$4/device/month</strong>, billed directly by them — not us.
             </p>
           </div>
           <p className="text-center text-gray-500 text-sm">
             Additional device pickups/drops after setup: <strong>$65/trip</strong> (within 20 mi of Flower Mound)
           </p>
+        </div>
+        <div className="mt-10 text-center">
+          <a href="#contact" className="inline-block bg-orange hover:bg-orange-hover text-white px-10 py-4 rounded-xl font-bold text-lg transition-all shadow-lg">
+            Get a Free Device Assessment
+          </a>
         </div>
         {/* Pricing Calculator */}
         <PricingCalculator />
