@@ -322,7 +322,7 @@ function HowItWorks() {
   const steps = [
     { num: '1', title: 'Apple Business Manager Verification', desc: 'Requires a DUNS number and Apple verification (1-5 business days). We can handle this for you, or walk you through it. Must be completed before any devices are enrolled.', price: 'Included' },
     { num: '2', title: 'We Build Your System', desc: 'MDM platform configured, lock screen designed, app library set up, device policies created. One-time setup.', price: '$750' },
-    { num: '3', title: 'We Pick Up Your Devices', desc: 'One pickup trip included. We come to your location.', price: 'Included' },
+    { num: '3', title: 'We Pick Up Your Devices', desc: 'We come to you — every time. All pickup and dropoff trips for device setup are free within 20 miles of Flower Mound. Outside that? We\'ll quote a travel fee, but we\'ll still come.', price: 'Free within 20 mi' },
     { num: '4', title: 'Every Device Enrolled & Ready', desc: 'Apps installed, locked down, serial-number labeled, and tested.', price: '$45/device' },
     { num: '5', title: "You're in Control", desc: 'Remote management from anywhere. We handle the technical side monthly. MDM platform subscription included.', price: '$12/device/mo' },
   ]
@@ -568,7 +568,7 @@ function Pricing() {
         'MDM platform configuration (SimpleMDM)',
         'Custom lock screen design (logo + review QR code)',
         'Device policies and restrictions configured',
-        'First pickup/dropoff trip included',
+        'All pickup/dropoff trips free within 20 mi of Flower Mound',
         'App library configured',
       ],
     },
@@ -647,9 +647,10 @@ function Pricing() {
               <strong className="text-navy">Not on our management plan?</strong> You'd pay SimpleMDM directly — typically <strong>$2–$4/device/month</strong> — to keep your devices enrolled and managed.
             </p>
           </div>
-          <p className="text-center text-gray-500 text-sm">
-            Additional device pickups/drops after setup: <strong>$65/trip</strong> (within 20 mi of Flower Mound)
-          </p>
+          <div className="bg-green-50 rounded-xl p-4 border border-green-200 text-center">
+            <p className="text-green-800 text-sm font-semibold mb-1">Free pickup & dropoff — every trip, every time</p>
+            <p className="text-green-700 text-sm">All device setup trips are included at no extra charge within 20 miles of Flower Mound. Need us farther out? We'll still come — just ask for a travel quote.</p>
+          </div>
         </div>
         <div className="mt-10 text-center">
           <a href="#contact" className="inline-block bg-orange hover:bg-orange-hover text-white px-10 py-4 rounded-xl font-bold text-lg transition-all shadow-lg">
@@ -796,7 +797,7 @@ function FAQ() {
     { q: 'How long does setup take?', a: 'System setup (ABM + MDM + lock screen design) takes 2 to 3 business days. Device deployment is typically done same-day or next-day once we have the devices.' },
     { q: 'Are there any other monthly costs?', a: "On our management plan, no — the $12/device/month covers everything, including the SimpleMDM platform subscription. If you ever cancel our management plan, you'd need to pay SimpleMDM directly to keep your devices enrolled, which runs $2–$4/device/month depending on their plan. As long as you're with us, that cost is covered." },
     { q: 'Is there a contract?', a: 'No long-term contracts. Monthly management is month-to-month. Cancel anytime with 30 days notice.' },
-    { q: 'What areas do you serve?', a: "We're based in Flower Mound and serve the entire DFW metroplex, with free pickup/dropoff within 20 miles. Farther out? We'll quote a travel fee." },
+    { q: 'What areas do you serve?', a: "We're based in Flower Mound and serve the entire DFW metroplex. All device setup trips — including any additional pickups after your initial deployment — are free within 20 miles. No per-trip charges, no surprise fees. Need us outside that radius? We'll still make the trip, just ask and we'll give you a travel quote." },
     { q: 'What if a device breaks or needs a hardware repair?', a: 'We handle MDM and software. Hardware repairs go through Apple or your carrier. But we can help you re-enroll and reconfigure a repaired or replacement device.' },
     { q: 'How does the QR code lock screen work?', a: "We design a custom lock screen image with your logo, phone number, and a QR code that links anywhere you want. Most clients use their Google Business review page. When customers or employees scan it, they land right on your review form. It's a passive review-collection tool on every device you own." },
   ]
@@ -842,9 +843,16 @@ function WhyLocal() {
         <h2 className="text-3xl sm:text-4xl font-black text-white mb-6">
           Local IT Device Management in DFW — Not a Help Desk in Another State
         </h2>
-        <p className="text-white/70 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+        <p className="text-white/70 text-lg max-w-2xl mx-auto mb-6 leading-relaxed">
           FleetReady is based in Flower Mound. We pick up your devices, deploy them, and we're real people you can text. No tickets. No hold music. No offshore support.
         </p>
+        <div className="inline-flex items-center gap-3 bg-orange/15 border border-orange/30 rounded-2xl px-6 py-4 mb-10">
+          <IconMapPin />
+          <p className="text-white text-sm text-left leading-snug">
+            <span className="font-bold text-orange block">Free pickup & dropoff — every trip</span>
+            Every device setup trip is on us within 20 miles. Adding devices later? Still free. Outside 20 miles? We'll still come — just ask for a travel quote.
+          </p>
+        </div>
         <div className="flex flex-wrap justify-center gap-3">
           {cities.map(c => (
             <span key={c} className="bg-white/10 text-white/80 px-4 py-2 rounded-full text-sm font-medium border border-white/10 hover:border-orange/40 hover:text-orange transition-colors">
