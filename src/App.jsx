@@ -283,6 +283,54 @@ function LockScreenFeature() {
   )
 }
 
+// ─── Physical Setup Feature ─────────────────────────────────────────────────
+function PhysicalSetup() {
+  const features = [
+    {
+      title: 'Physical Asset Labels',
+      desc: 'Every device gets a label with its serial number, employee name, barcode, QR code, or whatever identifier your business needs. Pick it up, know exactly what it is.',
+      optional: false,
+    },
+    {
+      title: 'Cases & Screen Protectors',
+      desc: 'Send us the cases and screen protectors before pickup and we\'ll install them while we have the devices. They arrive fully protected and ready to hand out.',
+      optional: true,
+      note: 'You provide the cases/accessories',
+    },
+    {
+      title: 'Hand-Ready Delivery',
+      desc: 'Every device comes back enrolled, labeled, protected, and configured. Your team just picks one up and gets to work — no IT setup, no Apple IDs, nothing to figure out.',
+      optional: false,
+    },
+  ]
+  return (
+    <section className="py-16 md:py-24 bg-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12">
+          <span className="inline-block bg-navy/10 text-navy text-sm font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-4">White-Glove Deployment</span>
+          <h2 className="text-3xl sm:text-4xl font-black text-navy mb-4">Devices Ready to Hand Straight to Your Team</h2>
+          <p className="text-gray-500 text-lg max-w-2xl mx-auto">While we have your devices, we can do more than just enroll them. Every device can leave fully labeled, protected, and ready — no assembly required on your end.</p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-8">
+          {features.map((f, i) => (
+            <div key={i} className="bg-gray-light rounded-2xl p-8 border border-gray-medium relative">
+              {f.optional && (
+                <span className="absolute top-4 right-4 text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-orange-light text-orange">Optional</span>
+              )}
+              <h3 className="text-lg font-bold text-navy mb-3 pr-16">{f.title}</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">{f.desc}</p>
+              {f.note && (
+                <p className="mt-3 text-xs font-semibold text-orange bg-orange-light rounded-lg px-3 py-2">{f.note}</p>
+              )}
+            </div>
+          ))}
+        </div>
+        <p className="text-center text-gray-400 text-sm mt-8">Have specific labeling or packaging requirements? Mention it when you get in touch and we'll work it out.</p>
+      </div>
+    </section>
+  )
+}
+
 // ─── Pain Points ────────────────────────────────────────────────────────────
 const IconDownload = () => (
   <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -323,10 +371,10 @@ function PainPoints() {
 // ─── How It Works ───────────────────────────────────────────────────────────
 function HowItWorks() {
   const steps = [
-    { num: '1', title: 'Apple Business Manager Verification', desc: 'Requires a DUNS number and Apple verification (1-5 business days). We can handle this for you, or walk you through it. Must be completed before any devices are enrolled.', price: 'Included' },
+    { num: '1', title: 'Apple Business Manager Verification', desc: 'A mandatory first step — no devices can be enrolled without it. We can handle the entire application for you if you provide your business details, or you can complete it yourself and come to us once it\'s approved. Either way, Apple\'s verification takes a few business days and must be done before anything else.', price: 'Included' },
     { num: '2', title: 'We Build Your System', desc: 'MDM platform configured, app library set up, device policies created. Optional: custom lock screen configured if you provide your branding. One-time setup.', price: '$750' },
     { num: '3', title: 'We Pick Up Your Devices', desc: 'We come to you — every time. All pickup and dropoff trips for device setup are free within 20 miles of Flower Mound. Outside that? We\'ll quote a travel fee, but we\'ll still come.', price: 'Free within 20 mi' },
-    { num: '4', title: 'Every Device Enrolled & Ready', desc: 'Apps installed, locked down, serial-number labeled, and tested.', price: '$45/device' },
+    { num: '4', title: 'Every Device Enrolled & Ready', desc: 'Apps installed, locked down, serial-number labeled, and tested. Optional: physical asset labels, cases, and screen protectors installed while we have them.', price: '$45/device' },
     { num: '5', title: "You're in Control", desc: 'Remote management from anywhere. We handle the technical side monthly. MDM platform subscription included.', price: '$12/device/mo' },
   ]
   return (
@@ -377,7 +425,7 @@ function HowItWorks() {
             </div>
           ))}
         </div>
-        <p className="text-center text-white/30 text-xs mt-10">* Apple Business Manager verification timeline is controlled by Apple and varies by business. We handle the application process for you.</p>
+        <p className="text-center text-white/30 text-xs mt-10">* Apple Business Manager verification is mandatory and controlled entirely by Apple — typically 1–5 business days. We can handle the application for you or pick up where you left off if you've already started.</p>
       </div>
     </section>
   )
@@ -588,6 +636,8 @@ function Pricing() {
         'Apps pushed silently',
         'Custom lock screen applied (if opted in)',
         'Serial number labeled & verified in MDM',
+        'Asset labels, barcodes, or name tags applied (if requested)',
+        'Cases & screen protectors installed (if you provide them)',
         'No Apple ID needed for end users',
       ],
     },
@@ -792,6 +842,7 @@ function PricingCalculator() {
 function FAQ() {
   const [openIdx, setOpenIdx] = useState(null)
   const faqs = [
+    { q: 'What is Apple Business Manager and do I need it?', a: "Yes — Apple Business Manager (ABM) is a mandatory first step. No Apple devices can be enrolled into MDM without it. You have two options: we can handle the entire ABM application for you if you provide your business details (DUNS number, business info), or you can complete it yourself and come to us once Apple approves it. Apple's verification process takes a few business days regardless of who handles it, so the sooner it's started the better." },
     { q: 'Do my employees need Apple IDs?', a: "No. That's one of the biggest advantages of our setup. Using Apple Business Manager and Automated Device Enrollment, we configure every device so employees never need a personal Apple ID. Apps are pushed silently from your business account." },
     { q: 'What happens if a device is lost or stolen?', a: 'You contact us and we remotely wipe it immediately. No data left on the device. We can also lock it and display a custom message if you want to give the employee a chance to return it first.' },
     { q: 'Can I add more devices later?', a: "Absolutely. Once your system is set up, adding a new device is just $45. We can pick it up or walk you through enrolling it remotely." },
@@ -802,7 +853,8 @@ function FAQ() {
     { q: 'Is there a contract?', a: 'No long-term contracts. Monthly management is month-to-month. Cancel anytime with 30 days notice.' },
     { q: 'What areas do you serve?', a: "We're based in Flower Mound and serve the entire DFW metroplex. All device setup trips — including any additional pickups after your initial deployment — are free within 20 miles. No per-trip charges, no surprise fees. Need us outside that radius? We'll still make the trip, just ask and we'll give you a travel quote." },
     { q: 'What if a device breaks or needs a hardware repair?', a: 'We handle MDM and software. Hardware repairs go through Apple or your carrier. But we can help you re-enroll and reconfigure a repaired or replacement device.' },
-    { q: 'Can you set up a custom lock screen with a QR code?', a: "Yes, it's an optional add-on. You provide your logo, branding, and the link you want the QR code to point to — most clients use their Google Business review page. We configure and push the lock screen to every device in your fleet. We don't design the artwork, but once you have your assets ready, we handle the rest." },
+    { q: 'Can you set up a custom lock screen with a QR code?', a: "Yes, it's an optional feature. You provide your logo, branding, and the link you want the QR code to point to — most clients use their Google Business review page. We configure and push the lock screen to every device in your fleet. We don't design the artwork, but once you have your assets ready, we handle the rest." },
+    { q: 'Can you physically label and prep devices while you have them?', a: "Yes. While we have your devices we can apply physical labels — serial numbers, employee names, barcodes, QR codes, asset tags, whatever you need to tell them apart. If you want cases or screen protectors installed, send them to us before pickup and we'll put everything together. Devices come back enrolled, labeled, protected, and ready to hand straight to your team." },
   ]
   return (
     <section id="faq" className="py-16 md:py-24 bg-white">
@@ -1085,6 +1137,7 @@ export default function App() {
       <Navbar />
       <Hero />
       <LockScreenFeature />
+      <PhysicalSetup />
       <PainPoints />
       <HowItWorks />
       <RemoteCapabilities />
