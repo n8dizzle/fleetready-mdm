@@ -458,10 +458,29 @@ function HowItWorksAndPricing() {
     <section id="pricing" className="py-16 md:py-24 bg-navy relative overflow-hidden">
       <div className="absolute inset-0 opacity-5" style={{backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px'}} />
       <div className="max-w-2xl mx-auto px-4 sm:px-6 relative">
-        <div className="text-center mb-14">
+        <div className="text-center mb-10">
           <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">How It Works — and What It Costs</h2>
           <p className="text-white/60 text-lg max-w-2xl mx-auto">Five steps from setup to full device control, with transparent pricing at every stage.</p>
         </div>
+        {/* Cost summary panels */}
+        {(() => {
+          const costs = [
+            { price: '$750', label: 'One-Time', sublabel: 'System build & configuration' },
+            { price: '$45', label: 'Per Device', sublabel: 'Enrollment & physical setup' },
+            { price: '$12', label: '/device/mo', sublabel: 'Management, support & MDM included' },
+          ]
+          return (
+            <div className="grid grid-cols-3 gap-3 sm:gap-4 mb-12">
+              {costs.map((c, i) => (
+                <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-5 text-center">
+                  <div className="text-2xl sm:text-3xl font-black text-orange">{c.price}</div>
+                  <div className="text-white font-bold text-sm mt-1">{c.label}</div>
+                  <div className="text-white/40 text-xs mt-1 leading-snug">{c.sublabel}</div>
+                </div>
+              ))}
+            </div>
+          )
+        })()}
         {/* Vertical timeline */}
         <div className="relative">
           <div className="absolute left-5 top-5 bottom-5 w-px bg-white/15" />
