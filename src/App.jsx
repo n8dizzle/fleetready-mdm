@@ -320,7 +320,7 @@ function PainPoints() {
 // ─── How It Works ───────────────────────────────────────────────────────────
 function HowItWorks() {
   const steps = [
-    { num: '1', title: 'Apple Business Manager Verification', desc: 'Requires a DUNS number and Apple verification (1-5 business days). We can handle this for you, or walk you through it. Must be completed before any devices are enrolled.', price: 'Included', note: true },
+    { num: '1', title: 'Apple Business Manager Verification', desc: 'Requires a DUNS number and Apple verification (1-5 business days). We can handle this for you, or walk you through it. Must be completed before any devices are enrolled.', price: 'Included' },
     { num: '2', title: 'We Build Your System', desc: 'MDM platform configured, lock screen designed, app library set up, device policies created. One-time setup.', price: '$750' },
     { num: '3', title: 'We Pick Up Your Devices', desc: 'One pickup trip included. We come to your location.', price: 'Included' },
     { num: '4', title: 'Every Device Enrolled & Ready', desc: 'Apps installed, locked down, serial-number labeled, and tested.', price: '$45/device' },
@@ -337,13 +337,14 @@ function HowItWorks() {
         {/* Desktop: horizontal stepper */}
         <div className="hidden lg:block">
           {/* Number row with connecting lines */}
-          <div className="flex items-center justify-between mb-8 px-8">
+          <div className="grid grid-cols-5 gap-6 px-8 mb-8">
             {steps.map((s, i) => (
-              <div key={i} className="flex items-center flex-1 last:flex-none">
-                <div className={`w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0 ${s.note ? 'bg-amber-500/20 ring-2 ring-amber-500/30' : 'bg-white/10 ring-2 ring-white/10'}`}>
-                  <span className={`text-lg font-black ${s.note ? 'text-amber-400' : 'text-orange'}`}>{s.num}</span>
+              <div key={i} className="flex justify-center relative">
+                {i > 0 && <div className="absolute top-7 left-0 right-1/2 h-px bg-white/15 -translate-x-3" />}
+                {i < 4 && <div className="absolute top-7 left-1/2 right-0 h-px bg-white/15 translate-x-3" />}
+                <div className="w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0 bg-white/10 ring-2 ring-white/10 relative z-10">
+                  <span className="text-lg font-black text-orange">{s.num}</span>
                 </div>
-                {i < 4 && <div className="flex-1 h-px bg-white/15 mx-3" />}
               </div>
             ))}
           </div>
