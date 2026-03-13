@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 // ─── iPad Mockup Component ──────────────────────────────────────────────────
-function IPadMockup({ className = '', size = 'lg' }) {
+function IPadMockup({ className = '', size = 'lg', src = '/lockscreen.png', alt = 'iPad screen' }) {
   const sizes = {
     sm: 'max-w-[100px]',
     md: 'max-w-[200px]',
@@ -16,13 +16,7 @@ function IPadMockup({ className = '', size = 'lg' }) {
         <div className="relative bg-black rounded-[1.4rem] overflow-hidden">
           {/* Screen reflection overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-white/[0.08] via-transparent to-transparent z-10 pointer-events-none rounded-[1.4rem]" />
-          {/* Lock screen image */}
-          <img
-            src="/lockscreen.png"
-            alt="Custom iPad lock screen showing company logo, motivational message, QR code linking to Google reviews, and Review Us call-to-action"
-            className="w-full h-auto block"
-            loading="lazy"
-          />
+          <img src={src} alt={alt} className="w-full h-auto block" loading="lazy" />
         </div>
         {/* Bottom edge detail */}
         <div className="absolute bottom-[2%] left-1/2 -translate-x-1/2 w-[12%] h-[3px] rounded-full bg-[#333]" />
@@ -236,7 +230,7 @@ function Hero() {
             </div>
           </div>
           <div className="relative flex justify-center">
-            <IPadHomeScreen size="lg" />
+            <IPadMockup size="lg" src="/ipad-screen.png" alt="iPad showing managed home screen with business apps configured by FleetReady MDM" />
             <div className="absolute -top-4 -right-4 w-24 h-24 bg-orange/20 rounded-full blur-3xl" />
             <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-orange/10 rounded-full blur-3xl" />
           </div>
