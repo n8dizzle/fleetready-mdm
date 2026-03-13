@@ -324,7 +324,7 @@ function HowItWorks() {
     { num: '2', title: 'We Build Your System', desc: 'MDM platform configured, lock screen designed, app library set up, device policies created. One-time setup.', price: '$750' },
     { num: '3', title: 'We Pick Up Your Devices', desc: 'One pickup trip included. We come to your location.', price: 'Included' },
     { num: '4', title: 'Every Device Enrolled & Ready', desc: 'Apps installed, locked down, serial-number labeled, and tested.', price: '$45/device' },
-    { num: '5', title: "You're in Control", desc: 'Remote management from anywhere. We handle the technical side monthly. MDM platform subscription ($2-$4/device/mo) billed separately by provider.', price: '$12/device/mo' },
+    { num: '5', title: "You're in Control", desc: 'Remote management from anywhere. We handle the technical side monthly. MDM platform subscription included.', price: '$12/device/mo' },
   ]
   return (
     <section className="py-16 md:py-24 bg-navy relative overflow-hidden">
@@ -594,8 +594,9 @@ function Pricing() {
       title: 'Ongoing Management',
       price: '$12',
       period: '/device/mo',
-      desc: 'We handle everything on the technical side every month so you never have to think about it.',
+      desc: 'We handle everything on the technical side every month so you never have to think about it. MDM platform subscription included.',
       items: [
+        'MDM platform subscription included',
         'Remote lock, wipe & passcode reset',
         'App pushes & updates',
         'Location tracking',
@@ -637,10 +638,10 @@ function Pricing() {
           ))}
         </div>
         <div className="mt-10 max-w-3xl mx-auto space-y-3">
-          <div className="bg-navy/5 rounded-xl p-5 border border-navy/10">
-            <h4 className="font-bold text-navy text-sm mb-2">Plus: MDM Platform Subscription (billed by provider)</h4>
+          <div className="bg-orange/5 rounded-xl p-5 border border-orange/20">
+            <h4 className="font-bold text-navy text-sm mb-2">MDM Platform Subscription Included</h4>
             <p className="text-gray-600 text-sm leading-relaxed">
-              Every enrolled device also requires an MDM platform subscription through SimpleMDM, typically <strong>$2–$4/device/month</strong>, billed directly by them — not us.
+              The $12/device/month covers everything — including the SimpleMDM platform subscription. No separate fees from the MDM provider. One number, all in.
             </p>
           </div>
           <p className="text-center text-gray-500 text-sm">
@@ -666,12 +667,10 @@ function PricingCalculator() {
   const setup = 750
   const perDevice = 45
   const perMonth = 12
-  const mdmPlatform = 3 // avg $2-4, use $3 as estimate
 
   const enrollmentCost = devices * perDevice
   const managementCost = devices * perMonth
-  const mdmCost = devices * mdmPlatform
-  const totalMonthly = managementCost + mdmCost
+  const totalMonthly = managementCost
   const totalUpfront = setup + enrollmentCost
   const totalOverTime = totalMonthly * months
 
@@ -762,20 +761,16 @@ function PricingCalculator() {
             <span>Our management ({devices} x ${perMonth}/mo)</span>
             <span className="font-semibold text-navy">${managementCost.toLocaleString()}/mo</span>
           </div>
-          <div className="flex justify-between text-sm text-gray-600">
-            <span>MDM platform fee ({devices} x ~${mdmPlatform}/mo)*</span>
-            <span className="font-semibold text-navy">~${mdmCost.toLocaleString()}/mo</span>
-          </div>
           <div className="flex justify-between text-sm text-navy font-medium border-t border-navy/10 pt-2">
             <span>Total monthly cost</span>
-            <span>~${totalMonthly.toLocaleString()}/mo</span>
+            <span>${totalMonthly.toLocaleString()}/mo</span>
           </div>
           <div className="border-t border-orange/30 pt-3 mt-2 flex justify-between bg-orange/5 -mx-6 px-6 py-4 rounded-b-xl">
             <span className="font-bold text-navy text-lg">Total over {months} month{months !== 1 ? 's' : ''}</span>
             <span className="font-black text-orange text-2xl">~${(totalUpfront + totalOverTime).toLocaleString()}</span>
           </div>
         </div>
-        <p className="text-gray-400 text-xs mt-3 text-center">* MDM platform fee estimated at $3/device/mo. Actual cost is $2-$4/device/mo depending on the SimpleMDM plan, billed separately by the provider.</p>
+        <p className="text-gray-400 text-xs mt-3 text-center">MDM platform subscription included in the $12/device/mo management fee. No separate platform charges.</p>
         <div className="text-center mt-6">
           <a href="#contact" className="inline-block bg-orange hover:bg-orange-hover text-white px-8 py-4 rounded-xl text-lg font-bold transition-all hover:scale-105 shadow-lg shadow-orange/25">
             Get a Free Assessment
@@ -796,7 +791,7 @@ function FAQ() {
     { q: 'What MDM software do you use?', a: "We primarily use SimpleMDM, which is built specifically for Apple device fleets. For Android, we use Google's Android Enterprise. You'll have your own dashboard login so you can see all your devices in one place." },
     { q: 'Do I need to be technical to use this?', a: "Not at all. Day-to-day, your devices just work. If you need to lock or wipe something, you text or call us and we handle it. The monthly management plan means you never have to think about it." },
     { q: 'How long does setup take?', a: 'System setup (ABM + MDM + lock screen design) takes 2 to 3 business days. Device deployment is typically done same-day or next-day once we have the devices.' },
-    { q: 'Are there any other monthly costs?', a: "Yes. Every enrolled device needs an active MDM platform subscription (SimpleMDM), which runs $2 to $4 per device per month depending on the plan. This is billed separately by SimpleMDM, not by us. Our $12/device/mo management fee covers everything else: remote support, app pushes, onboarding, and ongoing device management. We want you to know the full picture upfront." },
+    { q: 'Are there any other monthly costs?', a: "No. The $12/device/month covers everything — including the MDM platform subscription (SimpleMDM). Remote support, app pushes, onboarding, ongoing management, and the platform itself are all included. The only costs are the one-time $750 setup, $45 per device enrolled, and the $12/device/month ongoing fee." },
     { q: 'Is there a contract?', a: 'No long-term contracts. Monthly management is month-to-month. Cancel anytime with 30 days notice.' },
     { q: 'What areas do you serve?', a: "We're based in Flower Mound and serve the entire DFW metroplex, with free pickup/dropoff within 20 miles. Farther out? We'll quote a travel fee." },
     { q: 'What if a device breaks or needs a hardware repair?', a: 'We handle MDM and software. Hardware repairs go through Apple or your carrier. But we can help you re-enroll and reconfigure a repaired or replacement device.' },
