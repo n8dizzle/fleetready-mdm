@@ -220,10 +220,10 @@ function Hero() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="#contact" className="bg-orange hover:bg-orange-hover text-white px-8 py-4 rounded-xl text-lg font-bold transition-all hover:scale-105 text-center shadow-lg shadow-orange/25">
-                Get a Free Quote
+                Start Enrollment
               </a>
-              <a href="#casestudy" className="border-2 border-white/30 hover:border-white/60 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all text-center">
-                See Our Work
+              <a href="#calculator" className="border-2 border-white/30 hover:border-white/60 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all text-center">
+                Get an Estimate
               </a>
             </div>
             <div className="flex items-center gap-6 mt-8 text-white/50 text-sm">
@@ -729,7 +729,7 @@ function PricingCalculator() {
   const totalOverTime = totalMonthly * months
 
   return (
-    <div className="mt-16 max-w-2xl mx-auto">
+    <div id="calculator" className="mt-16 max-w-2xl mx-auto">
       <div className="bg-white rounded-2xl p-8 sm:p-10 border-2 border-navy/10 shadow-lg">
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 bg-navy/10 text-navy px-4 py-1.5 rounded-full text-sm font-semibold mb-3">
