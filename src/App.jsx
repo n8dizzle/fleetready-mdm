@@ -236,11 +236,7 @@ function Hero() {
             </div>
           </div>
           <div className="relative flex justify-center">
-            <img
-              src="/ipad-homescreen.png"
-              alt="iPad showing managed home screen with business apps like ChatGPT, Lennox Pros, Bluon, Slack, and Chrome, all configured and controlled by FleetReady MDM"
-              className="w-full max-w-[420px]"
-            />
+            <IPadHomeScreen size="lg" />
             <div className="absolute -top-4 -right-4 w-24 h-24 bg-orange/20 rounded-full blur-3xl" />
             <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-orange/10 rounded-full blur-3xl" />
           </div>
@@ -375,7 +371,7 @@ function HowItWorks() {
     { num: '2', title: 'We Build Your System', desc: 'MDM platform configured, app library set up, device policies created. Optional: custom lock screen configured if you provide your branding. One-time setup.', price: '$750' },
     { num: '3', title: 'We Pick Up Your Devices', desc: 'We come to you — every time. All pickup and dropoff trips for device setup are free within 20 miles of Flower Mound. Outside that? We\'ll quote a travel fee, but we\'ll still come.', price: 'Free within 20 mi' },
     { num: '4', title: 'Every Device Enrolled & Ready', desc: 'Apps installed, locked down, serial-number labeled, and tested. Optional: physical asset labels, cases, and screen protectors installed while we have them.', price: '$45/device' },
-    { num: '5', title: "You're in Control", desc: 'Remote management from anywhere. We handle the technical side monthly. MDM platform subscription included.', price: '$12/device/mo' },
+    { num: '5', title: 'We Handle Everything', desc: 'Need to lock a device, push an app, wipe a phone, or onboard a new hire? Just text or call us — we take care of it. You never have to log into a dashboard.', price: '$12/device/mo' },
   ]
   return (
     <section className="py-16 md:py-24 bg-navy relative overflow-hidden">
@@ -466,7 +462,7 @@ function RemoteCapabilities() {
           ))}
         </div>
         <div className="text-center mt-10">
-          <p className="text-gray-400 text-sm mb-4">All actions available via SimpleMDM dashboard, or just text us and we'll handle it.</p>
+          <p className="text-gray-400 text-sm mb-4">On the management plan, you never have to touch any of this yourself. Just text or call us and we'll handle it — same day.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="#contact" className="inline-block bg-orange hover:bg-orange-hover text-white px-8 py-3 rounded-xl font-bold transition-all shadow-lg shadow-orange/25">
               Get a Free Assessment
@@ -647,14 +643,15 @@ function Pricing() {
       title: 'Ongoing Management',
       price: '$12',
       period: '/device/mo',
-      desc: 'We handle everything on the technical side every month so you never have to think about it. MDM platform subscription included.',
+      desc: 'You never touch the MDM dashboard. Just text or call us — we do it for you. Lock a device, wipe it, push an app, onboard a new hire — whatever you need, we handle it.',
       items: [
         'MDM platform subscription included',
+        'Just text or call — we action it for you',
         'Remote lock, wipe & passcode reset',
-        'App pushes & updates',
+        'App pushes & updates on demand',
         'Location tracking',
         'New employee onboarding support',
-        'Email/text support',
+        'Email/text support — real person, no tickets',
       ],
     },
   ]
@@ -1142,9 +1139,9 @@ export default function App() {
       <HowItWorks />
       <RemoteCapabilities />
       <CaseStudy />
+      <WhyLocal />
       <Pricing />
       <FAQ />
-      <WhyLocal />
       <ContactForm />
       <Footer />
       <MobileCallButton />
