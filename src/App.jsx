@@ -1133,9 +1133,9 @@ export default function App() {
       <HowItWorks />
       <RemoteCapabilities />
       <CaseStudy />
-      <WhyLocal />
       <Pricing />
       <ContactForm />
+      <WhyLocal />
       <FAQ />
       <Footer />
       <MobileCallButton />
