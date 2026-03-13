@@ -685,18 +685,25 @@ function PricingCalculator() {
           </div>
           <h3 className="text-2xl font-black text-navy">See What Your Fleet Would Cost</h3>
         </div>
-        {/* Sliders */}
+        {/* Sliders + Inputs */}
         <div className="space-y-8 mb-8">
           <div>
             <div className="flex justify-between items-baseline mb-3">
               <label className="text-sm font-semibold text-navy">Number of Devices</label>
-              <span className="text-2xl font-black text-orange">{devices}</span>
+              <input
+                type="number"
+                min="1"
+                max="500"
+                value={devices}
+                onChange={(e) => setDevices(Math.max(1, Math.min(500, Number(e.target.value) || 1)))}
+                className="w-20 text-right text-2xl font-black text-orange bg-transparent border-b-2 border-orange/40 focus:border-orange outline-none"
+              />
             </div>
             <input
               type="range"
               min="1"
               max="100"
-              value={devices}
+              value={Math.min(devices, 100)}
               onChange={(e) => setDevices(Number(e.target.value))}
               className="w-full h-2 bg-gray-medium rounded-full appearance-none cursor-pointer accent-orange"
             />
@@ -705,19 +712,26 @@ function PricingCalculator() {
               <span>25</span>
               <span>50</span>
               <span>75</span>
-              <span>100</span>
+              <span>100+</span>
             </div>
           </div>
           <div>
             <div className="flex justify-between items-baseline mb-3">
               <label className="text-sm font-semibold text-navy">Months of Management</label>
-              <span className="text-2xl font-black text-orange">{months}</span>
+              <input
+                type="number"
+                min="1"
+                max="120"
+                value={months}
+                onChange={(e) => setMonths(Math.max(1, Math.min(120, Number(e.target.value) || 1)))}
+                className="w-20 text-right text-2xl font-black text-orange bg-transparent border-b-2 border-orange/40 focus:border-orange outline-none"
+              />
             </div>
             <input
               type="range"
               min="1"
               max="24"
-              value={months}
+              value={Math.min(months, 24)}
               onChange={(e) => setMonths(Number(e.target.value))}
               className="w-full h-2 bg-gray-medium rounded-full appearance-none cursor-pointer accent-orange"
             />
@@ -726,7 +740,7 @@ function PricingCalculator() {
               <span>6 mo</span>
               <span>12 mo</span>
               <span>18 mo</span>
-              <span>24 mo</span>
+              <span>24+ mo</span>
             </div>
           </div>
         </div>
