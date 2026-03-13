@@ -639,9 +639,12 @@ function Pricing() {
         </div>
         <div className="mt-10 max-w-3xl mx-auto space-y-3">
           <div className="bg-orange/5 rounded-xl p-5 border border-orange/20">
-            <h4 className="font-bold text-navy text-sm mb-2">MDM Platform Subscription Included</h4>
+            <h4 className="font-bold text-navy text-sm mb-2">MDM Platform Subscription Included in Management</h4>
             <p className="text-gray-600 text-sm leading-relaxed">
               The $12/device/month covers everything — including the SimpleMDM platform subscription. No separate fees from the MDM provider. One number, all in.
+            </p>
+            <p className="text-gray-500 text-sm leading-relaxed mt-2">
+              <strong className="text-navy">Not on our management plan?</strong> You'd pay SimpleMDM directly — typically <strong>$2–$4/device/month</strong> — to keep your devices enrolled and managed.
             </p>
           </div>
           <p className="text-center text-gray-500 text-sm">
@@ -791,7 +794,7 @@ function FAQ() {
     { q: 'What MDM software do you use?', a: "We primarily use SimpleMDM, which is built specifically for Apple device fleets. For Android, we use Google's Android Enterprise. You'll have your own dashboard login so you can see all your devices in one place." },
     { q: 'Do I need to be technical to use this?', a: "Not at all. Day-to-day, your devices just work. If you need to lock or wipe something, you text or call us and we handle it. The monthly management plan means you never have to think about it." },
     { q: 'How long does setup take?', a: 'System setup (ABM + MDM + lock screen design) takes 2 to 3 business days. Device deployment is typically done same-day or next-day once we have the devices.' },
-    { q: 'Are there any other monthly costs?', a: "No. The $12/device/month covers everything — including the MDM platform subscription (SimpleMDM). Remote support, app pushes, onboarding, ongoing management, and the platform itself are all included. The only costs are the one-time $750 setup, $45 per device enrolled, and the $12/device/month ongoing fee." },
+    { q: 'Are there any other monthly costs?', a: "On our management plan, no — the $12/device/month covers everything, including the SimpleMDM platform subscription. If you ever cancel our management plan, you'd need to pay SimpleMDM directly to keep your devices enrolled, which runs $2–$4/device/month depending on their plan. As long as you're with us, that cost is covered." },
     { q: 'Is there a contract?', a: 'No long-term contracts. Monthly management is month-to-month. Cancel anytime with 30 days notice.' },
     { q: 'What areas do you serve?', a: "We're based in Flower Mound and serve the entire DFW metroplex, with free pickup/dropoff within 20 miles. Farther out? We'll quote a travel fee." },
     { q: 'What if a device breaks or needs a hardware repair?', a: 'We handle MDM and software. Hardware repairs go through Apple or your carrier. But we can help you re-enroll and reconfigure a repaired or replacement device.' },
