@@ -258,12 +258,15 @@ function LockScreenFeature() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <span className="inline-block bg-white/20 text-white text-sm font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-6">Featured</span>
+            <span className="inline-block bg-white/20 text-white text-sm font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-6">Optional Add-On</span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-6">
-              Every Device Becomes a Marketing Tool
+              Turn Every Device Into a Marketing Tool
             </h2>
-            <p className="text-lg text-white/90 leading-relaxed mb-6">
-              We design a custom lock screen for every device we deploy. Your company name, contact info, and a QR code that sends employees or customers straight to your Google review page.
+            <p className="text-lg text-white/90 leading-relaxed mb-4">
+              Want a custom lock screen on every device? We can set it up. You provide your logo, branding, and a QR code link — we configure and push it to every device in your fleet.
+            </p>
+            <p className="text-white/75 text-base leading-relaxed mb-6">
+              Popular use: a QR code that sends customers straight to your Google review page. Passive, always-on, zero effort after setup.
             </p>
             <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border border-white/20">
               <p className="text-white font-semibold text-lg italic">
@@ -321,7 +324,7 @@ function PainPoints() {
 function HowItWorks() {
   const steps = [
     { num: '1', title: 'Apple Business Manager Verification', desc: 'Requires a DUNS number and Apple verification (1-5 business days). We can handle this for you, or walk you through it. Must be completed before any devices are enrolled.', price: 'Included' },
-    { num: '2', title: 'We Build Your System', desc: 'MDM platform configured, lock screen designed, app library set up, device policies created. One-time setup.', price: '$750' },
+    { num: '2', title: 'We Build Your System', desc: 'MDM platform configured, app library set up, device policies created. Optional: custom lock screen configured if you provide your branding. One-time setup.', price: '$750' },
     { num: '3', title: 'We Pick Up Your Devices', desc: 'We come to you — every time. All pickup and dropoff trips for device setup are free within 20 miles of Flower Mound. Outside that? We\'ll quote a travel fee, but we\'ll still come.', price: 'Free within 20 mi' },
     { num: '4', title: 'Every Device Enrolled & Ready', desc: 'Apps installed, locked down, serial-number labeled, and tested.', price: '$45/device' },
     { num: '5', title: "You're in Control", desc: 'Remote management from anywhere. We handle the technical side monthly. MDM platform subscription included.', price: '$12/device/mo' },
@@ -566,7 +569,7 @@ function Pricing() {
       items: [
         'Apple Business Manager setup',
         'MDM platform configuration (SimpleMDM)',
-        'Custom lock screen design (logo + review QR code)',
+        'Optional: custom lock screen configured (you provide the branding)',
         'Device policies and restrictions configured',
         'All pickup/dropoff trips free within 20 mi of Flower Mound',
         'App library configured',
@@ -583,7 +586,7 @@ function Pricing() {
         'Device wiped or unboxed',
         'Auto-enrolled via ADE',
         'Apps pushed silently',
-        'Lock screen applied',
+        'Custom lock screen applied (if opted in)',
         'Serial number labeled & verified in MDM',
         'No Apple ID needed for end users',
       ],
@@ -794,12 +797,12 @@ function FAQ() {
     { q: 'Can I add more devices later?', a: "Absolutely. Once your system is set up, adding a new device is just $45. We can pick it up or walk you through enrolling it remotely." },
     { q: 'What MDM software do you use?', a: "We primarily use SimpleMDM, which is built specifically for Apple device fleets. For Android, we use Google's Android Enterprise. You'll have your own dashboard login so you can see all your devices in one place." },
     { q: 'Do I need to be technical to use this?', a: "Not at all. Day-to-day, your devices just work. If you need to lock or wipe something, you text or call us and we handle it. The monthly management plan means you never have to think about it." },
-    { q: 'How long does setup take?', a: 'System setup (ABM + MDM + lock screen design) takes 2 to 3 business days. Device deployment is typically done same-day or next-day once we have the devices.' },
+    { q: 'How long does setup take?', a: 'System setup (ABM + MDM configuration + policies) takes 2 to 3 business days. Device deployment is typically done same-day or next-day once we have the devices. If you want a custom lock screen, have your branding ready before setup and we\'ll configure it at the same time.' },
     { q: 'Are there any other monthly costs?', a: "On our management plan, no — the $12/device/month covers everything, including the SimpleMDM platform subscription. If you ever cancel our management plan, you'd need to pay SimpleMDM directly to keep your devices enrolled, which runs $2–$4/device/month depending on their plan. As long as you're with us, that cost is covered." },
     { q: 'Is there a contract?', a: 'No long-term contracts. Monthly management is month-to-month. Cancel anytime with 30 days notice.' },
     { q: 'What areas do you serve?', a: "We're based in Flower Mound and serve the entire DFW metroplex. All device setup trips — including any additional pickups after your initial deployment — are free within 20 miles. No per-trip charges, no surprise fees. Need us outside that radius? We'll still make the trip, just ask and we'll give you a travel quote." },
     { q: 'What if a device breaks or needs a hardware repair?', a: 'We handle MDM and software. Hardware repairs go through Apple or your carrier. But we can help you re-enroll and reconfigure a repaired or replacement device.' },
-    { q: 'How does the QR code lock screen work?', a: "We design a custom lock screen image with your logo, phone number, and a QR code that links anywhere you want. Most clients use their Google Business review page. When customers or employees scan it, they land right on your review form. It's a passive review-collection tool on every device you own." },
+    { q: 'Can you set up a custom lock screen with a QR code?', a: "Yes, it's an optional add-on. You provide your logo, branding, and the link you want the QR code to point to — most clients use their Google Business review page. We configure and push the lock screen to every device in your fleet. We don't design the artwork, but once you have your assets ready, we handle the rest." },
   ]
   return (
     <section id="faq" className="py-16 md:py-24 bg-white">
