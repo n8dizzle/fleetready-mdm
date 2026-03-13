@@ -1010,6 +1010,7 @@ function Footer() {
           <div>
             <h4 className="text-white font-semibold text-sm mb-3">Contact</h4>
             <div className="space-y-2 text-white/50 text-sm">
+              <a href="tel:8174054799" className="block hover:text-orange transition-colors">(817) 405-4799</a>
               <a href="#contact" className="block hover:text-orange transition-colors">Get in Touch</a>
               <p>Flower Mound, TX</p>
             </div>
@@ -1036,14 +1037,13 @@ function Footer() {
 }
 
 // ─── Mobile Call Button ─────────────────────────────────────────────────────
-// Phone number not yet configured. Uncomment and add number when ready:
-// function MobileCallButton() {
-//   return (
-//     <a href="tel:YOUR_NUMBER" className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-orange text-white text-center py-4 font-bold text-lg flex items-center justify-center gap-2 shadow-[0_-4px_12px_rgba(0,0,0,0.15)]">
-//       <IconPhone /> Call Us Now
-//     </a>
-//   )
-// }
+function MobileCallButton() {
+  return (
+    <a href="tel:8174054799" className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-orange text-white text-center py-4 font-bold text-lg flex items-center justify-center gap-2 shadow-[0_-4px_12px_rgba(0,0,0,0.15)]">
+      <IconPhone /> Call Us Now
+    </a>
+  )
+}
 
 // ─── App ────────────────────────────────────────────────────────────────────
 export default function App() {
@@ -1061,7 +1061,7 @@ export default function App() {
       <WhyLocal />
       <ContactForm />
       <Footer />
-      {/* <MobileCallButton /> — uncomment when phone number is added */}
+      <MobileCallButton />
       {/* Spacer for mobile call button */}
       <div className="h-16 md:hidden" />
     </>
