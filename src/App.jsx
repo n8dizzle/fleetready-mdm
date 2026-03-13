@@ -1141,8 +1141,8 @@ export default function App() {
       <CaseStudy />
       <WhyLocal />
       <Pricing />
-      <FAQ />
       <ContactForm />
+      <FAQ />
       <Footer />
       <MobileCallButton />
       {/* Spacer for mobile call button */}
