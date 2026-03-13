@@ -258,7 +258,7 @@ function LockScreenFeature() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <span className="inline-block bg-white/20 text-white text-sm font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-6">Optional Add-On</span>
+            <span className="inline-block bg-white/20 text-white text-sm font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-6">Optional Feature</span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-6">
               Turn Every Device Into a Marketing Tool
             </h2>
