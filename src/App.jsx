@@ -367,7 +367,7 @@ function PainPoints() {
 // ─── How It Works ───────────────────────────────────────────────────────────
 function HowItWorks() {
   const steps = [
-    { num: '1', title: 'Apple Business Manager Verification', desc: 'A mandatory first step — no devices can be enrolled without it. We can handle the entire application for you if you provide your business details, or you can complete it yourself and come to us once it\'s approved. Either way, Apple\'s verification takes a few business days and must be done before anything else.', price: 'Included' },
+    { num: '1', title: 'Apple Business Manager Verification', desc: 'Requires a DUNS number and Apple verification (1-5 business days). We can handle this for you, or you can complete it yourself and come to us once approved. Must be completed before any devices are enrolled.', price: 'Included' },
     { num: '2', title: 'We Build Your System', desc: 'MDM platform configured, app library set up, device policies created. Optional: custom lock screen configured if you provide your branding. One-time setup.', price: '$750' },
     { num: '3', title: 'We Pick Up Your Devices', desc: 'We come to you — every time. All pickup and dropoff trips for device setup are free within 20 miles of Flower Mound. Outside that? We\'ll quote a travel fee, but we\'ll still come.', price: 'Free within 20 mi' },
     { num: '4', title: 'Every Device Enrolled & Ready', desc: 'Apps installed, locked down, serial-number labeled, and tested. Optional: physical asset labels, cases, and screen protectors installed while we have them.', price: '$45/device' },
@@ -421,7 +421,7 @@ function HowItWorks() {
             </div>
           ))}
         </div>
-        <p className="text-center text-white/30 text-xs mt-10">* Apple Business Manager verification is mandatory and controlled entirely by Apple — typically 1–5 business days. We can handle the application for you or pick up where you left off if you've already started.</p>
+        <p className="text-center text-white/30 text-xs mt-10">* Apple Business Manager verification timeline is controlled by Apple and varies by business. We handle the application process for you, or you can complete it yourself before coming to us.</p>
       </div>
     </section>
   )
