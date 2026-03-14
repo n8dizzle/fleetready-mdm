@@ -336,20 +336,20 @@ function PainPoints() {
     { icon: <IconDownload />, color: 'bg-purple-50 text-purple-600', headline: 'Tired of dealing with Apple ID and app download headaches?', text: 'We eliminate Apple IDs entirely. Apps are pushed silently to every device. No logins, no passwords, no calls from confused employees.' },
   ]
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-navy">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-black text-navy mb-4">Common iPad & Device Management Challenges</h2>
-          <p className="text-gray-500 text-lg max-w-2xl mx-auto">These are the problems every DFW small business hits when they hand out devices without a plan.</p>
+          <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">Common iPad & Device Management Challenges</h2>
+          <p className="text-white/60 text-lg max-w-2xl mx-auto">These are the problems every DFW small business hits when they hand out devices without a plan.</p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {cards.map((c, i) => (
-            <div key={i} className="bg-gray-light border border-gray-medium rounded-2xl p-7 hover:border-orange/40 hover:shadow-lg transition-all group">
-              <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-5 ${c.color} group-hover:bg-orange/10 group-hover:text-orange transition-colors`}>
+            <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-7 hover:border-orange/40 hover:shadow-lg transition-all group">
+              <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-5 bg-white/10 text-white/80 group-hover:bg-orange/15 group-hover:text-orange transition-colors">
                 {c.icon}
               </div>
-              <h3 className="text-lg font-bold text-navy mb-3 leading-snug">{c.headline}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{c.text}</p>
+              <h3 className="text-lg font-bold text-white mb-3 leading-snug">{c.headline}</h3>
+              <p className="text-white/60 text-sm leading-relaxed">{c.text}</p>
             </div>
           ))}
         </div>
@@ -368,12 +368,12 @@ function HowItWorks() {
     { num: '5', title: 'We Handle Everything', desc: 'Need to lock a device, push an app, wipe a phone, or onboard a new hire? Just text or call us — we take care of it. You never have to log into a dashboard.', price: '$12/device/mo' },
   ]
   return (
-    <section className="py-16 md:py-24 bg-navy relative overflow-hidden">
-      <div className="absolute inset-0 opacity-5" style={{backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px'}} />
+    <section className="py-16 md:py-24 bg-orange relative overflow-hidden">
+      <div className="absolute inset-0 opacity-10" style={{backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px'}} />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
         <div className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">How MDM Setup Works</h2>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto">From setup to full device control in five steps.</p>
+          <p className="text-white/80 text-lg max-w-2xl mx-auto">From setup to full device control in five steps.</p>
         </div>
         {/* Desktop: horizontal stepper */}
         <div className="hidden lg:block">
@@ -381,10 +381,10 @@ function HowItWorks() {
           <div className="grid grid-cols-5 gap-6 px-8 mb-8">
             {steps.map((s, i) => (
               <div key={i} className="flex justify-center relative">
-                {i > 0 && <div className="absolute top-7 left-0 right-1/2 h-px bg-white/15 -translate-x-3" />}
-                {i < 4 && <div className="absolute top-7 left-1/2 right-0 h-px bg-white/15 translate-x-3" />}
-                <div className="w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0 bg-white/10 ring-2 ring-white/10 relative z-10">
-                  <span className="text-lg font-black text-orange">{s.num}</span>
+                {i > 0 && <div className="absolute top-7 left-0 right-1/2 h-px bg-white/30 -translate-x-3" />}
+                {i < 4 && <div className="absolute top-7 left-1/2 right-0 h-px bg-white/30 translate-x-3" />}
+                <div className="w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0 bg-white/25 ring-2 ring-white/25 relative z-10">
+                  <span className="text-lg font-black text-navy">{s.num}</span>
                 </div>
               </div>
             ))}
@@ -394,8 +394,8 @@ function HowItWorks() {
             {steps.map((s, i) => (
               <div key={i} className="text-center">
                 <h3 className="text-white font-bold text-sm mb-2 leading-snug">{s.title}</h3>
-                <p className="text-white/50 text-xs leading-relaxed mb-3">{s.desc}</p>
-                <span className={`inline-block text-xs font-bold px-3 py-1 rounded-full ${s.note ? 'bg-amber-500/10 text-amber-400' : 'bg-white/10 text-orange'}`}>{s.price}</span>
+                <p className="text-white/80 text-xs leading-relaxed mb-3">{s.desc}</p>
+                <span className={`inline-block text-xs font-bold px-3 py-1 rounded-full ${s.note ? 'bg-amber-500/20 text-amber-200' : 'bg-navy/20 text-white'}`}>{s.price}</span>
               </div>
             ))}
           </div>
@@ -403,19 +403,19 @@ function HowItWorks() {
         {/* Mobile/tablet: stacked cards */}
         <div className="lg:hidden grid sm:grid-cols-2 gap-4">
           {steps.map((s, i) => (
-            <div key={i} className={`rounded-xl p-5 ${s.note ? 'bg-amber-500/10 border border-amber-500/20' : 'bg-white/5 border border-white/10'}`}>
+            <div key={i} className={`rounded-xl p-5 ${s.note ? 'bg-amber-500/15 border border-amber-500/30' : 'bg-white/15 border border-white/25'}`}>
               <div className="flex items-center gap-3 mb-3">
-                <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${s.note ? 'bg-amber-500/20' : 'bg-white/10'}`}>
-                  <span className={`text-sm font-black ${s.note ? 'text-amber-400' : 'text-orange'}`}>{s.num}</span>
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${s.note ? 'bg-amber-500/20' : 'bg-white/25'}`}>
+                  <span className={`text-sm font-black ${s.note ? 'text-amber-200' : 'text-navy'}`}>{s.num}</span>
                 </div>
                 <h3 className="text-white font-bold text-sm leading-snug">{s.title}</h3>
               </div>
-              <p className="text-white/50 text-xs leading-relaxed mb-3">{s.desc}</p>
-              <span className={`inline-block text-xs font-bold px-3 py-1 rounded-full ${s.note ? 'bg-amber-500/10 text-amber-400' : 'bg-white/10 text-orange'}`}>{s.price}</span>
+              <p className="text-white/80 text-xs leading-relaxed mb-3">{s.desc}</p>
+              <span className={`inline-block text-xs font-bold px-3 py-1 rounded-full ${s.note ? 'bg-amber-500/20 text-amber-200' : 'bg-navy/20 text-white'}`}>{s.price}</span>
             </div>
           ))}
         </div>
-        <p className="text-center text-white/30 text-xs mt-10">* Apple Business Manager verification timeline is controlled by Apple and varies by business. We handle the application process for you, or you can complete it yourself before coming to us.</p>
+        <p className="text-center text-white/60 text-xs mt-10">* Apple Business Manager verification timeline is controlled by Apple and varies by business. We handle the application process for you, or you can complete it yourself before coming to us.</p>
       </div>
     </section>
   )
@@ -650,16 +650,16 @@ function Pricing() {
     },
   ]
   return (
-    <section id="pricing" className="py-16 md:py-24 bg-gray-light">
+    <section id="pricing" className="py-16 md:py-24 bg-orange">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-4">
-          <h2 className="text-3xl sm:text-4xl font-black text-navy mb-4">Simple, Transparent MDM Pricing</h2>
-          <p className="text-gray-500 text-lg max-w-2xl mx-auto">Your total cost is made up of three parts — here's exactly what each one covers.</p>
+          <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">Simple, Transparent MDM Pricing</h2>
+          <p className="text-white/80 text-lg max-w-2xl mx-auto">Your total cost is made up of three parts — here's exactly what each one covers.</p>
         </div>
-        <p className="text-center text-sm font-semibold text-orange uppercase tracking-wider mb-10">Every customer pays all three</p>
+        <p className="text-center text-sm font-semibold text-white uppercase tracking-wider mb-10">Every customer pays all three</p>
         <div className="grid md:grid-cols-3 gap-6 items-stretch">
           {components.map((c, i) => (
-            <div key={i} className="bg-white rounded-2xl border-2 border-gray-medium p-8 flex flex-col">
+            <div key={i} className="bg-white rounded-2xl border-2 border-white/30 p-8 flex flex-col">
               <div className="flex items-center justify-between mb-5">
                 <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-orange-light text-orange">{c.badge}</span>
                 <span className="text-xs font-bold text-gray-400">Part {c.step} of 3</span>
@@ -682,22 +682,22 @@ function Pricing() {
           ))}
         </div>
         <div className="mt-10 max-w-3xl mx-auto space-y-3">
-          <div className="bg-orange/5 rounded-xl p-5 border border-orange/20">
-            <h4 className="font-bold text-navy text-sm mb-2">MDM Platform Subscription Included in Management</h4>
-            <p className="text-gray-600 text-sm leading-relaxed">
+          <div className="bg-white/15 rounded-xl p-5 border border-white/20">
+            <h4 className="font-bold text-white text-sm mb-2">MDM Platform Subscription Included in Management</h4>
+            <p className="text-white/80 text-sm leading-relaxed">
               The $12/device/month covers everything — including the SimpleMDM platform subscription. No separate fees from the MDM provider. One number, all in.
             </p>
-            <p className="text-gray-500 text-sm leading-relaxed mt-2">
-              <strong className="text-navy">Not on our management plan?</strong> You'd pay SimpleMDM directly — typically <strong>$2–$4/device/month</strong> — to keep your devices enrolled and managed.
+            <p className="text-white/80 text-sm leading-relaxed mt-2">
+              <strong className="text-white">Not on our management plan?</strong> You'd pay SimpleMDM directly — typically <strong>$2–$4/device/month</strong> — to keep your devices enrolled and managed.
             </p>
           </div>
-          <div className="bg-green-50 rounded-xl p-4 border border-green-200 text-center">
-            <p className="text-green-800 text-sm font-semibold mb-1">Free pickup & dropoff — every trip, every time</p>
-            <p className="text-green-700 text-sm">All device setup trips are included at no extra charge within 20 miles of Flower Mound. Need us farther out? We'll still come — just ask for a travel quote.</p>
+          <div className="bg-white/15 rounded-xl p-4 border border-white/20 text-center">
+            <p className="text-white text-sm font-semibold mb-1">Free pickup & dropoff — every trip, every time</p>
+            <p className="text-white/80 text-sm">All device setup trips are included at no extra charge within 20 miles of Flower Mound. Need us farther out? We'll still come — just ask for a travel quote.</p>
           </div>
         </div>
         <div className="mt-10 text-center">
-          <a href="#contact" className="inline-block bg-orange hover:bg-orange-hover text-white px-10 py-4 rounded-xl font-bold text-lg transition-all shadow-lg">
+          <a href="#contact" className="inline-block bg-white hover:bg-white/90 text-orange px-10 py-4 rounded-xl font-bold text-lg transition-all shadow-lg">
             Get a Free Device Assessment
           </a>
         </div>
@@ -937,15 +937,15 @@ function ContactForm() {
 
   if (submitted) {
     return (
-      <section id="contact" className="py-16 md:py-24 bg-gray-light">
+      <section id="contact" className="py-16 md:py-24 bg-orange">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center">
-          <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <svg className="w-10 h-10 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg className="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
             </svg>
           </div>
-          <h2 className="text-3xl font-black text-navy mb-4">We Got Your Message!</h2>
-          <p className="text-gray-500 text-lg">We'll get back to you within 1 business day. If it's urgent, give us a call.</p>
+          <h2 className="text-3xl font-black text-white mb-4">We Got Your Message!</h2>
+          <p className="text-white/80 text-lg">We'll get back to you within 1 business day. If it's urgent, give us a call.</p>
         </div>
       </section>
     )
@@ -954,17 +954,17 @@ function ContactForm() {
   const [intent, setIntent] = useState(null)
 
   return (
-    <section id="contact" className="py-16 md:py-24 bg-gray-light">
+    <section id="contact" className="py-16 md:py-24 bg-orange">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-black text-navy mb-4">Ready to Get Started?</h2>
-          <p className="text-gray-500 text-lg">Pick the option that fits where you're at.</p>
+          <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">Ready to Get Started?</h2>
+          <p className="text-white/80 text-lg">Pick the option that fits where you're at.</p>
         </div>
 
         {/* Dual funnel selector */}
         {!intent && (
           <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
-            <button onClick={() => setIntent('learn')} className="bg-white rounded-2xl p-8 border-2 border-gray-medium hover:border-orange/60 hover:shadow-xl transition-all text-left group">
+            <button onClick={() => setIntent('learn')} className="bg-white rounded-2xl p-8 border-2 border-white/30 hover:border-white hover:shadow-xl transition-all text-left group">
               <div className="w-14 h-14 bg-orange-light rounded-xl flex items-center justify-center mb-5 group-hover:bg-orange/20 transition-colors">
                 <svg className="w-7 h-7 text-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
@@ -989,11 +989,11 @@ function ContactForm() {
         {/* Form (shown after selecting intent) */}
         {intent && (
           <div className="max-w-2xl mx-auto">
-            <button onClick={() => setIntent(null)} className="text-gray-400 hover:text-navy text-sm mb-6 flex items-center gap-1 transition-colors">
+            <button onClick={() => setIntent(null)} className="text-white/60 hover:text-white text-sm mb-6 flex items-center gap-1 transition-colors">
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
               Back to options
             </button>
-            <div className={`rounded-xl px-5 py-3 mb-6 text-sm font-medium ${intent === 'signup' ? 'bg-navy text-orange' : 'bg-orange-light text-orange'}`}>
+            <div className={`rounded-xl px-5 py-3 mb-6 text-sm font-medium ${intent === 'signup' ? 'bg-navy text-orange' : 'bg-white/20 text-white'}`}>
               {intent === 'signup' ? "Let's get you set up. We'll reach out within 1 business day to kick things off." : "No commitment. We'll review your setup and send you a custom plan and quote."}
             </div>
             <form action="https://formspree.io/f/mojnzeae" method="POST" onSubmit={handleSubmit} className="bg-white rounded-2xl p-8 sm:p-10 shadow-lg border border-gray-medium space-y-6">
